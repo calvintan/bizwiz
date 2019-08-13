@@ -8,6 +8,7 @@ gem 'puma'
 gem 'rails', '5.2.3'
 gem 'redis'
 gem 'rqrcode'
+gem 'doc_ripper'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
@@ -16,9 +17,11 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem "roo", "~> 2.8.0"
+gem 'docx'
 # gem 'docx', '~> 0.2.07', :require => ["docx"]
 gem "chartkick"
 gem 'highcharts-rails'
+gem 'pdf-reader'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

@@ -6,13 +6,13 @@
           <h2>Create your chart</h2>
           <p>Start by uploading your file. We accept .xlsx and .csv files</p>
         </div>
-        <%= form_tag import_graph_datatables_path, multipart: true do %>
-        <%= file_field_tag :file %>
-        <label for="file">
-          <img src="<%= image_path "upload-icon.svg" %>" alt="">
-          <span class="btn btn-outline-dark">Select a file from your device</span>
-        </label>
-        <%= submit_tag "Upload file", class: "btn btn-primary" %>
+        <%= form_tag import_collection_datatables_path, multipart: true do %>
+          <%= file_field_tag :file %>
+          <label for="file">
+            <img src="<%= image_path "upload-icon.svg" %>" alt="">
+            <span class="btn btn-outline-dark">Select a file from your device</span>
+          </label>
+          <%= submit_tag "Upload file", class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>

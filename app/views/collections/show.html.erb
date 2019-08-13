@@ -1,0 +1,6 @@
+<h1>Your graphs</h1>
+<% @graphs.each do | graph | %>
+<%= link_to 'Graph', graph_datatables_path(graph) %>
+
+<% end %>
+

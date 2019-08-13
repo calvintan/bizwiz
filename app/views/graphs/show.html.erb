@@ -28,7 +28,7 @@
           <% elsif @graph.category.include?('line') %>
           <%= area_chart @options, title: @graph.name, xtitle: @graph.x_axis_title, ytitle: @graph.y_axis_title, thousands: ",", prefix: "$"   %>
           <% elsif @graph.category.include?('pie') %>
-          <%= pie_chart @pie_array, title: @graph.name, xtitle: @graph.x_axis_title, ytitle: @graph.y_axis_title, donut: false, legend: "bottom", label: "Value", suffix: "%" %>
+          <%= pie_chart @data_array, title: @graph.name, xtitle: @graph.x_axis_title, ytitle: @graph.y_axis_title, donut: false, legend: "bottom", label: "Value", suffix: "%" %>
           <% elsif @graph.category.include?('geo') %>
           <%= geo_chart @options, title: @graph.name, xtitle: @graph.x_axis_title, ytitle: @graph.y_axis_title %>
           <% end %>
@@ -51,7 +51,5 @@
       saveAs(blob, "chart.png");
     })
   });
-  // console.log('canvas', canvas);
-  // console.log('button', button);
 </script>
 

@@ -6,3 +6,5 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Datatable.destroy_all if Rails.env.development?
+Graph.destroy_all if Rails.env.development?
+p 'cleared database'

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :graphs, except: [:new] do
+  resources :collections, only: [:index, :create, :show] do
     resources :datatables do
       collection do
         post :import
@@ -7,6 +7,11 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'graphs#index'
+  resources :graphs, except: [:new] do
+    resources :datatables do
+    end
+  end
+
+  root to: 'collections#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
