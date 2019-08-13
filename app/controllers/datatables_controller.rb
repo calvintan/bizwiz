@@ -79,7 +79,7 @@ class DatatablesController < ApplicationController
       s.each do |e|
         e = e.split
         e[1..-1].each do |v|
-          @datatable = Datatable.create({series: e[0], value: v, graph_id: @graph.id}) if (e[0].empty? == false) && (v.to_f != 0)
+          @datatable = Datatable.create({key: e[0], value: v.to_f, graph_id: @graph.id}) if (e[0].empty? == false) && (v.to_f != 0)
         end
       end
     end
@@ -88,7 +88,7 @@ class DatatablesController < ApplicationController
   def docx_read
     doc = Docx::Document.open(@datatable.path)
     doc.tables.each do |table|
-      @graph = Graph.create(collection_id: params[:collection_id])
+      @graph = Graph.create({collection_id: params[:collection_id]})
       table.rows.each do |row|
         data = []
         row.cells.each { |e| data << e.text }
@@ -103,7 +103,7 @@ class DatatablesController < ApplicationController
     spreadsheet = Roo::Excelx.new(@datatable.path)
     spreadsheet.sheets.each do |name|
       # Create a new graph for each Excel sheet
-      @graph = Graph.create(collection_id: params[:collection_id])
+      @graph = Graph.create({name: name, collection_id: params[:collection_id]})
       # sheet = spreadsheet.sheet(name)
       @dataset = []
       @series = []

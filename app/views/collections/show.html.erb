@@ -1,6 +1,6 @@
 <h1>Your graphs</h1>
-<% @graphs.each do | graph | %>
-<%= link_to 'Graph', graph_datatables_path(graph) %>
+<% @graphs.each_with_index do | graph, i | %>
+<%= link_to graph.name.nil? ? "Graph #{i + 1}" : graph.name , graph_datatables_path(graph) %>
 
 <% end %>
 
