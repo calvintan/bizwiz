@@ -10,7 +10,7 @@
     "dropzone": "^5.5.1",
     "file-saver": "^2.0.2",
     "highcharts": "^7.1.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.15.0",
     "pptxgenjs": "^2.5.0",
     "sortablejs": "^1.10.0-rc3"
